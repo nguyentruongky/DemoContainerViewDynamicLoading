@@ -27,7 +27,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your view in the first row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tp-YL-aZX">
-                                                        <rect key="frame" x="67" y="50" width="187" height="21"/>
+                                                        <rect key="frame" x="66" y="50" width="188" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                                             <action selector="selectPage:" destination="3ZQ-FI-uJ8" eventType="valueChanged" id="Nyo-KD-uRh"/>
                                                         </connections>
                                                     </segmentedControl>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-DC-zPY">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-DC-zPY" userLabel="Separator">
                                                         <rect key="frame" x="0.0" y="149" width="320" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.25" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -98,13 +98,14 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="controllerIndicatorSegment" destination="MNl-r6-GEl" id="tgz-40-7RJ"/>
                         <outlet property="pageContainer" destination="kcO-6T-nsg" id="TKV-Qr-jlR"/>
                         <outlet property="scrollView" destination="OAA-aA-TMQ" id="Pyv-To-ZZt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NP5-5v-EyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="282"/>
+            <point key="canvasLocation" x="269" y="288"/>
         </scene>
         <!--Text Controller-->
         <scene sceneID="8ti-rz-c2E">

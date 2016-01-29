@@ -10,6 +10,8 @@ import UIKit
 
 class TextController: UITableViewController {
 
+    var delegate : MainDelegate?
+    
     var vietnamTravelLocations = ["Vịnh Hạ Long", "Nha Trang", "Địa đạo Củ Chi", "Đồng bằng sông Cửu Long", "Mũi Né", "Ruộng bậc thang Sa Pa", "Phú Quốc", "Hội An", "Hồ Hoàn Kiếm", "Vịnh Hạ Long", "Nha Trang", "Địa đạo Củ Chi", "Đồng bằng sông Cửu Long", "Mũi Né", "Ruộng bậc thang Sa Pa", "Phú Quốc", "Hội An", "Hồ Hoàn Kiếm", "Vịnh Hạ Long", "Nha Trang", "Địa đạo Củ Chi", "Đồng bằng sông Cửu Long", "Mũi Né", "Ruộng bậc thang Sa Pa", "Phú Quốc", "Hội An", "Hồ Hoàn Kiếm", "Vịnh Hạ Long", "Nha Trang", "Địa đạo Củ Chi", "Đồng bằng sông Cửu Long", "Mũi Né", "Ruộng bậc thang Sa Pa", "Phú Quốc", "Hội An", "Hồ Hoàn Kiếm"]
     
     override func viewDidLoad() {
@@ -45,5 +47,14 @@ class TextController: UITableViewController {
     func getTableContentHeight() -> CGFloat {
         
         return CGFloat(vietnamTravelLocations.count) * 44
+    }
+    
+    func downloadComplete() {
+        
+        // add to images
+        tableView.reloadData()
+        let height = getTableContentHeight()
+        
+        delegate?.updateTheEmbedController(height)
     }
 }

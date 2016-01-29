@@ -11,12 +11,12 @@ import UIKit
 class ImageCell : UITableViewCell {
     
     @IBOutlet weak var coverImageView: UIImageView!
-
-    
 }
 
 class ImageShowController: UITableViewController {
 
+    var delegate : MainDelegate?
+    
     var images = ["Vietnam_1", "Vietnam_2", "Vietnam_3", "Vietnam_4", "Vietnam_5", "Vietnam_6"]
     
     override func viewDidLoad() {
@@ -53,5 +53,14 @@ class ImageShowController: UITableViewController {
     func getTableContentHeight() -> CGFloat {
         
         return CGFloat(images.count) * 150
+    }
+    
+    func downloadComplete() {
+        
+        // add to images
+        tableView.reloadData()
+        let height = getTableContentHeight()
+        
+        delegate?.updateTheEmbedController(height)
     }
 }
