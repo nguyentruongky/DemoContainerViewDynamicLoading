@@ -19,6 +19,7 @@ class MainViewController: UIViewController, MainDelegate {
     
     @IBOutlet weak var controllerIndicatorSegment: UISegmentedControl!
     
+    var imageController = ImageShowController()
     
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -69,7 +70,7 @@ class MainViewController: UIViewController, MainDelegate {
     
     func createImageController() {
         
-        let imageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ImageShowController") as! ImageShowController
+        imageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ImageShowController") as! ImageShowController
         dynamicHeight = imageController.getTableContentHeight()
         imageController.delegate = self
         imageController.tableView.scrollEnabled = false
@@ -92,12 +93,17 @@ class MainViewController: UIViewController, MainDelegate {
         
         if controllerIndicatorSegment.selectedSegmentIndex == 0 {
             
-            createImageController()
+            imageController.view.frame = CGRectMake(0, 0, pageContainer.frame.size.width, dynamicHeight * 2)
         }
-        else {
-            
-            createTextController()
-        }
+        
+//        if controllerIndicatorSegment.selectedSegmentIndex == 0 {
+//            
+//            createImageController()
+//        }
+//        else {
+//            
+//            createTextController()
+//        }
         
         updateScrollContentSize()
 
